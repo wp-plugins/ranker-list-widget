@@ -1,14 +1,14 @@
 === Ranker List Widget ===
 Contributors: paulranker
 Donate link: http://www.ranker.com/
-Tags: ranker, list, widget, voting
+Tags: poll, polls, survey, list, ranking, Ranker, voting
 Requires at least: 3.4
 Tested up to: 3.4.2
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add Ranker.com list widgets to your posts using a handy shortcode generator, setup default colors, fonts and layout.
+Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting items up and down, creating lasting, engaging content.
 
 
 == Description ==
