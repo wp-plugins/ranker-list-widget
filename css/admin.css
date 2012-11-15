@@ -1,0 +1,62 @@
+/**
+ * Admin Styles
+ * @fileoverview CSS styles for the Ranker WP Plugin admin interface.
+ * @package WordPress
+ */
+
+/* Headings */
+#rnkrWrap h1{ font-size:2.4em; clear:both; font-weight:400; }
+#rnkrWrap h2{ font-size:1.6em; clear:both; font-weight:400; padding:0; margin:20px 0 10px; }
+#rnkrWrap h3{ font-size:1.2em; clear:both; font-weight:400; }
+
+/* Sub menu */
+#rnkrSubMenu{ float:left; position:relative; margin:0 0 30px 0 !important; overflow:hidden; border:1px solid #1f3e66; border-radius:3px; }
+	#rnkrSubMenu li{ float:left; position:relative; margin-bottom:0; display:block; background:#fff; text-transform:uppercase; font-size:1.0em !important; }
+		#rnkrSubMenu li a{ display:block; padding:10px 15px 8px; text-decoration:none; color:#1f3e66; }
+	#rnkrSubMenu li.selected{ background:#1f3e66; }
+		#rnkrSubMenu li.selected a{ color:#fff; }	
+	#rnkrSubMenu li:hover{ background:#086cb8; }
+		#rnkrSubMenu li:hover a{ color:#fff; }
+		
+/* Update message */
+#reCalcSC{ float:left; position:relative; margin-left:5px; margin-top:11px; font-size:10px; color:red; }
+	#reCalcSC .arrow{ display:inline-block; width:0; height:0; margin-right:0;
+		border-right:5px solid red;
+		border-top:4px solid transparent;
+		border-bottom:4px solid transparent; }
+		
+/* Options items */
+#rnkrWrap ul{ margin-left:15px; }
+	#rnkrWrap ul li{ min-height:26px; font-size:1.1em; }
+	#rnkrWrap ul li input{ margin:0; }
+	#rnkrWrap ul li select{ height:1.7em; }
+		#rnkrWrap ul li select option{ padding-right:15px; }
+	#rnkrWrap ul li .chip{ display:inline-block; margin-bottom:-4px; border:1px solid #333; width:18px; height:18px; }
+	#rnkrWrap ul li .chip.blue{ background:#1f3e66; }
+	#rnkrWrap ul li .chip.black{ background:#000; }
+	#rnkrWrap ul li .chip.grey{ background:#ccc; }
+	#rnkrWrap ul li .picker{ display:inline-block; }
+	
+/* Submit Buttons */
+#rnkrWrap input[type="submit"], #rnkrWrap input[type="button"]{ cursor:pointer; background:#1f3e66; color:#fff; border:1px solid #1f3e66; }
+#rnkrWrap input[type="submit"]:hover, #rnkrWrap input[type="button"]:hover{ background:#086cb8; }
+#rnkrWrap input#rnkrwp_updateOptions{ font-size:1.5em; padding:7px 3px 3px; }
+#rnkrWrap input#rnkrwp_getShortCode{ font-size:0.9em; padding:3px 2px 2px; }
+
+/* Misc items */
+#rnkrWrap .clear{ clear:both; }
+#rnkrWrap .note{ font-size:0.8em; color:#888; }
+	
+/* Shortcode Output */
+#rnkrwp_shortCodeMessage{ vertical-align:top; top:15px; position:relative; }
+#rnkrwp_shortCodeOutput{ display:inline-block; padding:11px 15px 10px; margin-left:2px; margin-right:30px; font-size:1.4em; line-height:1.2em; background:#ccc; color:#333; border-radius:3px; overflow:hidden; }
+	#rnkrwp_shortCodeOutput span{display:block; margin-left:66px;}
+#rnrkwp_calc{color:#fff; background:#fff;}
+
+/* String Calculation Font Override Classes */
+#rnrkwp_calc .arial{ font-family: Arial, Helevtica, sans-serif !important; font-size:30px; font-weight:400; }
+#rnrkwp_calc .helevtica{ font-family: Helevtica, Arial, sans-serif !important; font-size:30px; font-weight:400; }
+#rnrkwp_calc .verdana{ font-family: Verdana, Geneva, sans-serif !important; font-size:30px; font-weight:400; }
+#rnrkwp_calc .geneva{ font-family: Geneva, Verdana, sans-serif !important; font-size:30px; font-weight:400; }
+#rnrkwp_calc .georgia{ font-family: Georgia, Times, 'Times New Roman', serif !important; font-size:30px; font-weight:400; }
+#rnrkwp_calc .times{ font-family: Times, 'Times New Roman', Georgia, serif !important; font-size:30px; font-weight:400; }
