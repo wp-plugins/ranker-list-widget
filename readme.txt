@@ -8,12 +8,14 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting items up and down, creating lasting, engaging content.
+Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting...
 
 
 == Description ==
 
-Use this plugin to easily add Ranker.com list widgets to your posts. The plugin comes with a built in shortcode generator, you only need the URL of the list on Ranker, we'll do the rest. Setup defaults for your site including colors, fonts, size and layout.
+Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting items up and down, creating lasting, engaging content. 
+
+The plugin comes with a built in shortcode generator, you only need the URL of the list on Ranker, we'll do the rest. Setup defaults for your site including colors, fonts, size and layout.
 
 = How it works =
 1. Find a list you want to embed from the Ranker.com site. 
