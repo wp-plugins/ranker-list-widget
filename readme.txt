@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting...
+Use Ranker to create a custom "ranking poll" - a list your visitors shape by voting, creating engaging, crowdsourced content.
 
 
 == Description ==
