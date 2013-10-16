@@ -61,6 +61,7 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 1. Example of the Ranker plugin options screen.
 2. Example of the Ranker plugin short code creation screen.
 3. Example of Ranker widget in post loaded via short code.
+4. Example of customized widget in post loaded via short code.
 
 
 == Changelog ==
