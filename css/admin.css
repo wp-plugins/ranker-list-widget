@@ -1,0 +1,110 @@
+/**
+ * Admin Styles
+ * @fileoverview CSS styles for the Ranker WP Plugin admin interface.
+ * @package WordPress
+ */
+
+/* Headings */
+#rnkrWrap h1{ font-size:2.4em; clear:both; font-weight:400; }
+#rnkrWrap h2{ font-size:1.6em; clear:both; font-weight:400; padding:0; margin:20px 0 10px; }
+#rnkrWrap h3{ font-size:1.2em; clear:both; font-weight:400; }
+
+/* Sub menu */
+#rnkrSubMenu{ float:left; position:relative; margin:0 0 30px 0 !important; overflow:hidden; border:1px solid #086cb8; border-radius:3px; }
+	#rnkrSubMenu li{ float:left; position:relative; margin-bottom:0; display:block; background:#fff; text-transform:uppercase; font-size:1.0em !important; }
+		#rnkrSubMenu li a{ display:block; padding:10px 15px 8px; text-decoration:none; color:#086cb8; font-weight:700; }
+	#rnkrSubMenu li.selected{ background:#086cb8; }
+		#rnkrSubMenu li.selected a{ color:#fff; }	
+	#rnkrSubMenu li:hover{ background:#449bfa; }
+		#rnkrSubMenu li:hover a{ color:#fff; }
+		
+/* Update message */
+#reCalcSC{ float:left; position:relative; margin-left:5px; margin-top:11px; font-size:10px; color:red; }
+	#reCalcSC .arrow{ display:inline-block; width:0; height:0; margin-right:0;
+		border-right:5px solid red;
+		border-top:4px solid transparent;
+		border-bottom:4px solid transparent; }
+		
+/* Options items */
+#rnkrWrap ul{ margin-left:15px; }
+	#rnkrWrap ul li{ min-height:26px; font-size:1.1em; }
+	#rnkrWrap ul li input{ margin:0; }
+	#rnkrWrap ul li select{ height:1.7em; }
+		#rnkrWrap ul li select option{ padding-right:15px; }
+	#rnkrWrap ul li .chip{ display:inline-block; margin-bottom:-4px; border:1px solid #333; width:18px; height:18px; }
+	#rnkrWrap ul li .chip.blue{ background:#1f3e66; }
+	#rnkrWrap ul li .chip.black{ background:#000; }
+	#rnkrWrap ul li .chip.grey{ background:#ccc; }
+	#rnkrWrap ul li .picker, #rnkrWrap ul li .colorSelect{ display:inline-block; }
+	#rnkrWrap ul li .colorSelect{ width:20px; height:20px; cursor:pointer; margin-top:5px; margin-right:5px;
+		/* Border */
+		border:1px solid #999;
+		-webkit-border-radius:3px; /* Safari, Chrome */
+		-moz-border-radius:3px; /* Firefox */
+		-ms-border-radius:3px; /* IE10 */
+		-o-border-radius:3px; /* Opera */
+		border-radius:3px; /* CSS3 */ }
+	#rnkrWrap ul li .colorSelect.selected{ border:1px solid #000;
+		/* Box Shadow */
+		-webkit-box-shadow:0 0 4px 4px rgba(247,189,20,0.8); /* Safari 4+, Chrome 2+*/
+		-moz-box-shadow:0 0 4px 4px rgba(247,189,20,0.8); /* FF 3.6+ */
+		-ms-box-shadow:0 0 4px 4px rgba(247,189,20,0.8); /* IE10 */
+		-o-box-shadow:0 0 4px 4px rgba(247,189,20,0.8); /* Opera */
+		box-shadow:0 0 4px 4px rgba(247,189,20,0.8); /* CSS3 */ }
+	
+	#rnkrwp_footColor_b81507{ background:#b81507; }
+	#rnkrwp_footColor_fc6d04{ background:#fc6d04; }
+	#rnkrwp_footColor_186017{ background:#186017; }
+	#rnkrwp_footColor_1e3e66{ background:#1e3e66; }
+	#rnkrwp_footColor_553083{ background:#553083; }
+	#rnkrwp_footColor_5c5b5b{ background:#5c5b5b; }
+	#rnkrwp_footColor_000000{ background:#000000; }
+	
+/* Submit Buttons */
+#rnkrWrap input[type="submit"], #rnkrWrap input[type="button"]{ cursor:pointer; background:#1f3e66; color:#fff; border:1px solid #1f3e66; }
+#rnkrWrap input[type="submit"]:hover, #rnkrWrap input[type="button"]:hover{ background:#086cb8; }
+
+#rnkrWrap input#rnkrwp_updateOptions, #rnkrWrap input#rnkrwp_getShortCode{ padding:10px 15px; font-size:15px; font-weight:700; color:#fff; cursor:pointer; border:0; text-shadow:1px 1px 0 #085da8; text-decoration:none;
+	background:#14a5f9;
+	border:1px solid #085da8;
+	/* Radius */
+	-webkit-border-radius:4px; /* Safari,Chrome */
+	-moz-border-radius:4px; /* Firefox */
+	-ms-border-radius:4px; /* IE10 */
+	-o-border-radius:4px; /* Opera */
+	border-radius:4px; /* CSS3 */
+	/* Box Shadow */
+	-webkit-box-shadow:0 -1px #2d5d99 inset, inset 0 1px #73c9fb, 0 -20px 8px #118bd3 inset; /* Safari, Chrome */
+	-moz-box-shadow:0 -1px #2d5d99 inset, inset 0 1px #73c9fb, 0 -20px 8px #118bd3 inset; /* Firefox */
+	-ms-box-shadow:0 -1px #2d5d99 inset, inset 0 1px #73c9fb, 0 -20px 8px #118bd3 inset; /* IE10 */
+	-o-box-shadow:0 -1px #2d5d99 inset, inset 0 1px #73c9fb, 0 -20px 8px #118bd3 inset; /* Opera */
+	box-shadow:0 -1px #2d5d99 inset, inset 0 1px #73c9fb, 0 -20px 8px #118bd3 inset; /* CSS3 */
+	behavior:url("/css/framework/PIE.htc"); /* IE8,9 */
+	/* Disable selection */
+	-webkit-user-select:none; /* Safari, Chrome */
+	-moz-user-select:none; /* Firefox */
+	-ms-user-select:none; /* IE10 */
+	-o-user-select:none; /* Opera */
+	user-select:none; /* CSS3 */ }
+#rnkrWrap input#rnkrwp_updateOptions:hover, #rnkrWrap input#rnkrwp_getShortCode:hover{ background:#139ff0; }
+#rnkrWrap input#rnkrwp_updateOptions:active, #rnkrWrap input#rnkrwp_getShortCode:active{
+	/* Box Shadow */
+	-webkit-box-shadow:0 1px #2d5d99 inset, 0 25px 8px #118bd3 inset; /* Safari, Chrome */
+	-moz-box-shadow:0 1px #2d5d99 inset, 0 25px 8px #118bd3 inset; /* Firefox */
+	-ms-box-shadow:0 1px #2d5d99 inset, 0 25px 8px #118bd3 inset; /* IE10 */
+	-o-box-shadow:0 1px #2d5d99 inset, 0 25px 8px #118bd3 inset; /* Opera */
+	box-shadow:0 1px #2d5d99 inset, 0 25px 8px #118bd3 inset; /* CSS3 */
+	text-shadow:0 -1px 0 #085da8; }
+#rnkrWrap input#rnkrwp_getShortCode{ padding:4px 10px; }
+
+/* Misc items */
+#rnkrWrap .clear{ clear:both; }
+#rnkrWrap .note{ font-size:0.8em; color:#888; }
+	
+/* Shortcode Output */
+#rnkrwp_rankerURL{ font-size:15px; }
+#rnkrwp_shortCodeMessage{ vertical-align:top; top:15px; position:relative; }
+#rnkrwp_shortCodeOutput{ display:inline-block; max-width:70%; padding:11px 15px 10px; margin-left:2px; margin-right:30px; font-size:1.4em; line-height:1.2em; background:#ccc; color:#333; 
+	border-radius:3px; overflow:hidden; }
+	#rnkrwp_shortCodeOutput span{display:block; margin-left:66px;}
+#rnrkwp_calc{color:#fff; background:#fff;}
