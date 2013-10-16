@@ -8,7 +8,7 @@ Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Ranker to create a custom "ranking poll" - a highly engaging crowdsourced list that will increase time on page by 125% and commenting by 3X.
+Use Ranker to create a custom "ranking poll" -a highly engaging crowdsourced list that will increase time on page by 125% and commenting 3X.
 
 
 == Description ==
