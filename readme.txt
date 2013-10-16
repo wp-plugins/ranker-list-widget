@@ -4,7 +4,7 @@ Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 3.6.1
-Stable tag: 2.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 == Changelog ==
 
+= 2.0.1 =
+Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly.
+
 = 2.0 =
 The version 2 widget has been completely rewritten from the ground up using HTML5. See below for a full list of features and changes;
 - Use of iframes has been completely removed.
@@ -105,6 +108,9 @@ Initial beta plugin.
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly. Low priority patch, but recommended.
 
 = 2.0 =
 V2 is out! This release updates the Wordpress plugin to our new HTML5 widget. Many bugs fixed and new features added, please see changelog for more info. V1 widgets will continue to work for some time but we recommend you upgrade immediately for the best experience.
