@@ -52,7 +52,7 @@ For an in-depth FAQ on widget building please see the [Ranker Widget FAQ](http:/
 = Wait a minute, what is Ranker, I've never heard of this service? =
 Ranker has millions of items in its database - everything from universities to comic book heroes to candy brands to your favorite band's discography. To make a list, all you have to do is tell us the topic and pick the items you want to include. Ranker takes care of the rest. Once you've built your own lists, we give you the tools to share them with your friends, or to open them up for voting and let the community decide the rankings!
 
-For a full rundown of the service please see the [Ranker FAQ](http://www.ranker.com/app/faq.htm "Full Ranker Serive FAQ")
+For a full rundown of the service please see the [Ranker FAQ](http://www.ranker.com/app/faq.htm "Full Ranker Serive FAQ"). 
 For more information on using Ranker widgets please see the [Widget Info page](http://www.ranker.com/widget/info.htm "Widget Info")
 
 
@@ -61,7 +61,6 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 1. Example of the Ranker plugin options screen.
 2. Example of the Ranker plugin short code creation screen.
 3. Example of Ranker widget in post loaded via short code.
-4. Example of customized widget in post loaded via short code.
 
 
 == Changelog ==
