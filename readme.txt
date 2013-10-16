@@ -1,24 +1,24 @@
 === Ranker List Widget ===
 Contributors: paulranker
 Donate link: http://www.ranker.com/
-Tags: poll, polls, survey, list, ranking, Ranker, voting
+Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 3.6.1
 Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Ranker to create a custom "ranking poll" - a list your visitors shape by voting, creating engaging, crowdsourced content.
+Use Ranker to create a custom "ranking poll" - a highly engaging crowdsourced list that will increase time on page by 125% and commenting by 3X.
 
 
 == Description ==
 
-Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about anything that your visitors impact by voting items up and down, creating lasting, engaging content. 
+Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about any topic that your visitors impact by voting items up and down, reranking the list, or adding items. Use it as a "POLL: _____" blog post, to add instant community engagement to an existing "list" blog post as a "reader's version", or stick Ranker lists on your sidebar to increase time on site.
 
 The plugin comes with a built in shortcode generator, you only need the URL of the list on Ranker, we'll do the rest. Setup defaults for your site including colors, fonts, size and layout.
 
 = How it works =
-1. Find a list you want to embed from the Ranker.com site. 
+1. Find a ranking you want your visitors to vote on from the [Ranker.com](http://www.ranker.com/ "Ranker") site, or create a new one there. 
 2. Copy the URL 
 3. Enter that URL into Settings->Ranker Options->Shortcodes
 4. Put that shortcode into any post. 
@@ -52,7 +52,7 @@ For an in-depth FAQ on widget building please see the [Ranker Widget FAQ](http:/
 = Wait a minute, what is Ranker, I've never heard of this service? =
 Ranker has millions of items in its database - everything from universities to comic book heroes to candy brands to your favorite band's discography. To make a list, all you have to do is tell us the topic and pick the items you want to include. Ranker takes care of the rest. Once you've built your own lists, we give you the tools to share them with your friends, or to open them up for voting and let the community decide the rankings!
 
-For a full rundown of the service please see the [Ranker FAQ](http://www.ranker.com/app/faq.htm "Full Ranker Serive FAQ")
+For a full rundown of the service please see the [Ranker FAQ](http://www.ranker.com/app/faq.htm "Full Ranker Serive FAQ"). 
 For more information on using Ranker widgets please see the [Widget Info page](http://www.ranker.com/widget/info.htm "Widget Info")
 
 
