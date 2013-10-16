@@ -138,10 +138,11 @@ RNKRWP.shortcode = {
 		buildCode : function( url, data ){
 			
 			//Build code
-			var shortcode = '[rnkrwp ' +
-				'id="'+data.id+'" ' +
-				'url="'+decodeURIComponent( url )+'" ' +
-				'name="'+decodeURIComponent( data.name )+'"' +
+			var name		= decodeURIComponent( data.name ),
+				shortcode	= '[rnkrwp ' +
+					'id="' + data.id + '" ' +
+					'url="' + decodeURIComponent( url ) + '" ' +
+					'name="' + name.replace( /"/g, '' ).replace( /&quot;/g, '' ) + '"' +
 				']';
 			
 			//Output Code
