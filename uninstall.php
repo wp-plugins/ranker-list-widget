@@ -10,5 +10,5 @@ if( !defined( 'WP_UNINSTALL_PLUGIN' ) ) exit();
 
 //Uninstall plugin options
 delete_option( 'rnkrwp' );
-delete_option( 'rnkrwp_cl' );
+
 ?>

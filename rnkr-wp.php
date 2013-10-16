@@ -2,8 +2,8 @@
 /*
 Plugin Name: Ranker List Widget
 Plugin URI: http://www.ranker.com/widget
-Description: Add a Ranker list widget to your Posts or Widget enabled areas.
-Version: 1.0
+Description: Add a Ranker list widget to your Posts.
+Version: 2.0
 Author: Ranker, Inc
 Author URI: http://www.ranker.com
 License: GPL2
@@ -33,7 +33,7 @@ License: GPL2
  */
 
 //Define Constants
-define( 'RNKRWP_VERSION', '1.0' );
+define( 'RNKRWP_VERSION', '2.0' );
 define( 'RNKRWP_REQUIRED_WP_VERSION', '3.4' );
 
 if(!defined( 'RNKRWP_PLUGIN_BASENAME' )) define( 'RNKRWP_PLUGIN_BASENAME', plugin_basename(__FILE__) );
@@ -52,26 +52,35 @@ function rnkrwp_init(){
 
 	//Create options array
 	$options = array(
-					'size'			=> 'medium',
-					'width'			=> '450',
-					'rows'			=> '10',
-					'show_user'		=> false,
-					'show_link'		=> false,
-					'bg'			=> '#ffffff',
-					'noBg'			=> false,
-					'highlight'		=> 'blue',
-					'title_color'	=> '#000000', //LOGIC: Title colour cannot match bg
-					'title_font'	=> 'georgia',
-					'item_font'		=> 'arial' );
-	//Store options if they don't exist
-	add_option( 'rnkrwp', $options );
+					'size_option'			=> 'medium',
+					'size_width'			=> '450',
+					'size_rows'				=> '20',
+					'size_rows_all'			=> false,
+					'header_show_image'		=> false,
+					'header_show_username'	=> false,
+					'header_show_criteria'	=> false,
+					'header_bgcolor'		=> 'ffffff',
+					'header_fontcolor'		=> '000000',
+					'header_fontface'		=> 'arial',
+					'list_fontcolor'		=> '000000',
+					'list_fontface'			=> 'arial',
+					'footer_bgcolor'		=> '1e3e66' );
 	
-	//Create changelog array
-	$log = array(
-					'changes'		=> false,
-					'updated'		=> date("Ymd-Hi") );
-	//Store changelog if it doesn't exist
-	add_option( 'rnkrwp_cl', $log );
+	$rnkrwp_prefs	= get_option( 'rnkrwp' );
+	//Pseudo preferences
+	$size_option	= $rnkrwp_prefs['size_option'];
+	
+	//Store options if they don't exist or update
+	if( $size_option == null || $size_option == 'undefined' ){
+		add_option( 'rnkrwp', $options );
+		update_option( 'rnkrwp', $options );
+	}
+	else{
+		add_option( 'rnkrwp', $options );
+	}
+
+	//Remove old changelog if exists
+	delete_option( 'rnkrwp_cl' );
 	
 }
 

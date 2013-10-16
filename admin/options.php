@@ -9,31 +9,20 @@ function rnkrwp_build_options(){
 	//Get preferences
 	$rnkrwp_prefs	= get_option( 'rnkrwp' );
 	//Pseudo preferences
-	$size			= $rnkrwp_prefs['size'];
-	$rows			= $rnkrwp_prefs['rows'];
-	$show_user		= $rnkrwp_prefs['show_user'];
-	$show_link		= $rnkrwp_prefs['show_link'];
-	$bg				= $rnkrwp_prefs['bg'];
-	$highlight		= $rnkrwp_prefs['highlight'];
-	$title_color	= $rnkrwp_prefs['title_color'];
-	$title_font		= $rnkrwp_prefs['title_font'];
-	$item_font		= $rnkrwp_prefs['item_font'];
+	$size_option			= $rnkrwp_prefs['size_option'];
+	$size_width				= $rnkrwp_prefs['size_width'];
+	$size_rows				= $rnkrwp_prefs['size_rows'];
+	$size_rows_all			= $rnkrwp_prefs['size_rows_all'];
+	$header_show_image		= $rnkrwp_prefs['header_show_image'];
+	$header_show_username	= $rnkrwp_prefs['header_show_username'];
+	$header_show_criteria	= $rnkrwp_prefs['header_show_criteria'];
+	$header_bgcolor			= $rnkrwp_prefs['header_bgcolor'];
+	$header_fontcolor		= $rnkrwp_prefs['header_fontcolor'];
+	$header_fontface		= $rnkrwp_prefs['header_fontface'];
+	$list_fontcolor			= $rnkrwp_prefs['list_fontcolor'];
+	$list_fontface			= $rnkrwp_prefs['list_fontface'];
+	$footer_bgcolor			= $rnkrwp_prefs['footer_bgcolor'];
 	
-	//Get changelog
-	$log			= get_option( 'rnkrwp_cl' );
-	$logMessage		= '';
-	//Check for updates
-	if( $log[ 'changes' ] == true ){
-		//Build message
-		$logMessage = '<div id="reCalcSC"><span class="arrow"></span> <strong>' . __( 'Warning!', 'rnkrwp' ) .' </strong>' . 
-						__( 'By changing these settings you may need to recalculate your shortcodes', 'rnkrwp' ) . ' : ' . $log['updated'] . '</div>';
-		//Clear log
-		$log = array(
-					'changes'		=> false,
-					'updated'		=> date("Ymd-Hi") );
-		//Update changelog
-		update_option( 'rnkrwp_cl', $log );
-	}
 ?>
 
 <div id="rnkrWrap">
@@ -58,86 +47,90 @@ function rnkrwp_build_options(){
 	
 	<p class="clear">
 		<?php esc_html_e( 'These are the default settings for all Ranker widgets used in posts.', 'rnkrwp' ); ?><br/>
-		<span class="note"><?php esc_html_e( '(please note: if you change the default width, number of rows or username display, you will need to re-generate all currently used shortcodes)' ); ?></span>
 	</p>
 	
-	<h2><?php esc_html_e( 'Dimensions', 'rnkrwp' ); ?></h2>
+	<h2><?php esc_html_e( 'Size', 'rnkrwp' ); ?></h2>
 	<ul>
+		<li><strong><?php esc_html_e( 'Width', 'rnkrwp' ); ?>:</strong></li>
 		<li>
-			<input type="radio" name="size" value="small"<?php if( $size == 'small' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Small', 'rnkrwp' ); ?> (300px)
+			<input type="radio" name="size_option" value="small"<?php if( $size_option == 'small' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Small', 'rnkrwp' ); ?> (300px)
 		</li>
 		<li>
-			<input type="radio" name="size" value="medium"<?php if( $size == 'medium' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Medium', 'rnkrwp' ); ?> (450px)
+			<input type="radio" name="size_option" value="medium"<?php if( $size_option == 'medium' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Medium', 'rnkrwp' ); ?> (450px)
 		</li>
 		<li>
-			<input type="radio" name="size" value="large"<?php if( $size == 'large' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Large', 'rnkrwp' ); ?> (600px)
+			<input type="radio" name="size_option" value="large"<?php if( $size_option == 'large' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Large', 'rnkrwp' ); ?> (600px)
 		</li>
 		<li>
-			<input type="radio" name="size" value="custom"<?php if( $size == 'custom' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Custom', 'rnkrwp' ); ?> 
-			<input type="text" name="custom_value" size="5" value="<?php echo $rnkrwp_prefs['width']; ?>"/> px
+			<input type="radio" id="rnkrwp_size-custom" name="size_option" value="custom"<?php if( $size_option == 'custom' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Custom', 'rnkrwp' ); ?> 
+			<input type="text" id="rnkrwp_size-width" name="size_width" size="5" value="<?php if( $size_option == 'custom' ) echo $size_width; ?>"/> px
+		</li>
+		<li><br/>
+			<strong><?php esc_html_e( 'Height', 'rnkrwp' ); ?>:</strong>  
+			<input type="text" id="rnkrwp_size-rows" name="size_rows" value="<?php if( $size_rows != 999 ) echo $size_rows ?>"<?php if( $size_rows_all ) echo ' disabled="true"'; ?> size="3"/> 
+			<?php esc_html_e( 'rows', 'rnkrwp' ); ?>&nbsp;&nbsp;
+			<input type="checkbox" id="rnkrwp_size-rowsall" name="size_rows_all" <?php if( $size_rows_all ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'display all rows', 'rnkrwp' ); ?>
 		</li>
 	</ul>
 	
-	<h2><?php esc_html_e( 'Options', 'rnkrwp' ); ?></h2>
+	<h2><?php esc_html_e( 'Header', 'rnkrwp' ); ?></h2>
 	<ul>
+		<li><strong><?php esc_html_e( 'List Details', 'rnkrwp' ); ?>:</strong></li>
 		<li>
-			<?php esc_html_e( 'Number of Rows at a time', 'rnkrwp' ); ?> : <select name="rows">
-				<option<?php if( $rows == '5' ) echo ' selected="selected"'; ?>>5</option>
-				<option<?php if( $rows == '10' ) echo ' selected="selected"'; ?>>10</option>
-				<option<?php if( $rows == '15' ) echo ' selected="selected"'; ?>>15</option>
-				<option<?php if( $rows == '25' ) echo ' selected="selected"'; ?>>25</option>
-				<option<?php if( $rows == 'All' ) echo ' selected="selected"'; ?>>All</option>
-			</select>
+			<input type="checkbox" name="header_show_image" value="1"<?php if( $header_show_image ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Show list image', 'rnkrwp' ); ?>
 		</li>
 		<li>
-			<?php esc_html_e( 'Display Username', 'rnkrwp' ); ?> : 
-			<input type="radio" name="show_user" value="1"<?php if( $show_user ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Yes', 'rnkrwp' ); ?> &nbsp;&nbsp;
-			<input type="radio" name="show_user" value="0"<?php if( !$show_user ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'No', 'rnkrwp' ); ?>
+			<input type="checkbox" name="header_show_username" value="1"<?php if( $header_show_username ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Show username', 'rnkrwp' ); ?>
 		</li>
 		<li>
-			<?php esc_html_e( 'Display link to list on Ranker', 'rnkrwp' ); ?> : <input type="checkbox" name="show_link"<?php if( $show_link ) echo ' checked="true"'; ?>/>
+			<input type="checkbox" name="header_show_criteria" value="1"<?php if( $header_show_criteria ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Show list criteria', 'rnkrwp' ); ?>
+		</li>
+		<li>
+			<strong><?php esc_html_e( 'Background', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color', 'rnkrwp' ); ?> <span class="picker" id="rnkrwp_header-bgcolor_pick"></span> 
+			<input type="text" id="rnkrwp_header-bgcolor" name="header_bgcolor" value="<?php echo $header_bgcolor; ?>" size="10"/> 
+		</li>
+		<li>
+			<strong><?php esc_html_e( 'Title', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color &amp; font style', 'rnkrwp' ); ?><br/>
+			<span class="picker" id="rnkrwp_header-fontcolor_pick"></span> 
+			<input type="text" id="rnkrwp_header-fontcolor" name="header_fontcolor" value="<?php echo $header_fontcolor; ?>" size="10"/>&nbsp;&nbsp;<select name="header_fontface">
+				<option<?php if( $header_fontface == 'arial' ) echo ' selected="selected"'; ?>>arial</option>
+				<option<?php if( $header_fontface == 'helevtica' ) echo ' selected="selected"'; ?>>helevtica</option>
+				<option<?php if( $header_fontface == 'verdana' ) echo ' selected="selected"'; ?>>verdana</option>
+				<option<?php if( $header_fontface == 'geneva' ) echo ' selected="selected"'; ?>>geneva</option>
+				<option<?php if( $header_fontface == 'times' ) echo ' selected="selected"'; ?>>times</option>
+				<option<?php if( $header_fontface == 'georgia' ) echo ' selected="selected"'; ?>>georgia</option>
+			</select> 
 		</li>
 	</ul>
 	
-	<h2><?php esc_html_e( 'Colors', 'rnkrwp' ); ?></h2>
+	<h2><?php esc_html_e( 'List', 'rnkrwp' ); ?></h2>
 	<ul>
 		<li>
-			<?php esc_html_e( 'Background Color', 'rnkrwp' ); ?> : <span class="picker" id="rnkrwp_bg_pick"></span> 
-			<input type="text" id="rnkrwp_bg" name="bg" value="<?php echo $bg; ?>" size="10"/> 
-		</li>
-		<li>
-			<?php esc_html_e( 'Title Color', 'rnkrwp' ); ?> : <span class="picker" id="rnkrwp_title-color_pick"></span> 
-			<input type="text" id="rnkrwp_title-color" name="title_color" value="<?php echo $title_color; ?>" size="10"/> 
-		</li>
-		<li>
-			<?php esc_html_e( 'Highlight Color', 'rnkrwp' ); ?> : 
-			<input type="radio" name="highlight" value="blue"<?php if( $highlight == 'blue' ) echo ' checked="true"'; ?>/> <span class="chip blue"></span> 
-			<input type="radio" name="highlight" value="black"<?php if( $highlight == 'black' ) echo ' checked="true"'; ?>/> <span class="chip black"></span> 
-			<input type="radio" name="highlight" value="grey"<?php if( $highlight == 'grey' ) echo ' checked="true"'; ?>/> <span class="chip grey"></span> 
+			<strong><?php esc_html_e( 'Items', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color &amp; font style', 'rnkrwp' ); ?><br/>
+			<span class="picker" id="rnkrwp_list-fontcolor_pick"></span> 
+			<input type="text" id="rnkrwp_list-fontcolor" name="list_fontcolor" value="<?php echo $list_fontcolor; ?>" size="10"/>&nbsp;&nbsp;<select name="list_fontface">
+				<option<?php if( $list_fontface == 'arial' ) echo ' selected="selected"'; ?>>arial</option>
+				<option<?php if( $list_fontface == 'helevtica' ) echo ' selected="selected"'; ?>>helevtica</option>
+				<option<?php if( $list_fontface == 'verdana' ) echo ' selected="selected"'; ?>>verdana</option>
+				<option<?php if( $list_fontface == 'geneva' ) echo ' selected="selected"'; ?>>geneva</option>
+				<option<?php if( $list_fontface == 'times' ) echo ' selected="selected"'; ?>>times</option>
+				<option<?php if( $list_fontface == 'georgia' ) echo ' selected="selected"'; ?>>georgia</option>
+			</select>
 		</li>
 	</ul>
 	
-	<h2><?php esc_html_e( 'Fonts', 'rnkrwp' ); ?></h2>
+	<h2><?php esc_html_e( 'Footer', 'rnkrwp' ); ?></h2>
 	<ul>
 		<li>
-			<?php esc_html_e( 'Title', 'rnkrwp' ); ?> : <select name="title_font">
-				<option<?php if( $title_font == 'arial' ) echo ' selected="selected"'; ?>>arial</option>
-				<option<?php if( $title_font == 'helevtica' ) echo ' selected="selected"'; ?>>helevtica</option>
-				<option<?php if( $title_font == 'verdana' ) echo ' selected="selected"'; ?>>verdana</option>
-				<option<?php if( $title_font == 'geneva' ) echo ' selected="selected"'; ?>>geneva</option>
-				<option<?php if( $title_font == 'times' ) echo ' selected="selected"'; ?>>times</option>
-				<option<?php if( $title_font == 'georgia' ) echo ' selected="selected"'; ?>>georgia</option>
-			</select>
-		</li>
-		<li>
-			<?php esc_html_e( 'Item Numbers and Name', 'rnkrwp' ); ?> : <select name="item_font">
-				<option<?php if( $item_font == 'arial' ) echo ' selected="selected"'; ?>>arial</option>
-				<option<?php if( $item_font == 'helevtica' ) echo ' selected="selected"'; ?>>helevtica</option>
-				<option<?php if( $item_font == 'verdana' ) echo ' selected="selected"'; ?>>verdana</option>
-				<option<?php if( $item_font == 'geneva' ) echo ' selected="selected"'; ?>>geneva</option>
-				<option<?php if( $item_font == 'times' ) echo ' selected="selected"'; ?>>times</option>
-				<option<?php if( $item_font == 'georgia' ) echo ' selected="selected"'; ?>>georgia</option>
-			</select>
+			<strong><?php esc_html_e( 'Background', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color', 'rnkrwp' ); ?><br/>
+			<span id="rnkrwp_footColor_b81507" class="colorSelect<?php if( $footer_bgcolor == 'b81507' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_fc6d04" class="colorSelect<?php if( $footer_bgcolor == 'fc6d04' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_186017" class="colorSelect<?php if( $footer_bgcolor == '186017' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_1e3e66" class="colorSelect<?php if( $footer_bgcolor == '1e3e66' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_553083" class="colorSelect<?php if( $footer_bgcolor == '553083' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_5c5b5b" class="colorSelect<?php if( $footer_bgcolor == '5c5b5b' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_000000" class="colorSelect<?php if( $footer_bgcolor == '000000' ) echo ' selected'; ?>"></span>
+			<input type="hidden" id="rnkrwp_footer-bgcolor" name="footer_bgcolor" value="<?php echo $footer_bgcolor; ?>"/>
 		</li>
 	</ul>
 	
@@ -163,62 +156,55 @@ function rnkrwp_update_options(){
 		$current	= get_option( 'rnkrwp' );
 		
 		//Get updates
-		$size		= $_POST['size'];
-		$rows		= $_POST['rows'];
-		$width		= $_POST['custom_value'];
-		$show_link	= $_POST['show_link'];
-		$show_user	= $_POST['show_user'];
+		$size_option			= $_POST['size_option'];
+		$size_width				= $_POST['size_width'];
+		$size_rows				= $_POST['size_rows'];
+		$size_rows_all			= $_POST['size_rows_all'];
+		$header_show_image		= $_POST['header_show_image'];
+		$header_show_username	= $_POST['header_show_username'];
+		$header_show_criteria	= $_POST['header_show_criteria'];
+		$header_bgcolor			= $_POST['header_bgcolor'];
+		$header_fontcolor		= $_POST['header_fontcolor'];
+		$header_fontface		= $_POST['header_fontface'];
+		$list_fontcolor			= $_POST['list_fontcolor'];
+		$list_fontface			= $_POST['list_fontface'];
+		$footer_bgcolor			= $_POST['footer_bgcolor'];
 		
 		//Check size value and adjust width
-		switch( $size ){
+		switch( $size_option ){
 			
 			case 'small' :
-				$width = '300';
+				$size_width = '300';
 				break;
 				
 			case 'medium' :
-				$width = '450';
+				$size_width = '450';
 				break;
 			
 			case 'large' :
-				$width = '600';
+				$size_width = '600';
 				break;
 
 		}
 		
-		//Check show link and adjust boolean
-		if( $show_link === 'on' ){
-			$show_link = 1;
-		}
-		else{
-			$show_link = 0;
-		}
-		
-		//Check for 'recalc' settings
-		if( $current[ 'size' ] !== $size || $current[ 'rows' ] !== $rows || $current[ 'show_user' ] !== $show_user ){
-
-			//Create changelog array
-			$log = array(
-				'changes'		=> true,
-				'updated'		=> date("Ymd-Hi") );
-			//Update changelog
-			update_option( 'rnkrwp_cl', $log );
-
-		}
+		//Check rows
+		if( $size_rows_all ) $size_rows = 999;
 	
 		//Create options array
 		$options = array(
-						'size'			=> $size,
-						'width'			=> $width,
-						'rows'			=> $rows,
-						'show_user'		=> $show_user,
-						'show_link'		=> $show_link,
-						'bg'			=> $_POST['bg'],
-						'noBg'			=> false,
-						'highlight'		=> $_POST['highlight'],
-						'title_color'	=> $_POST['title_color'],
-						'title_font'	=> $_POST['title_font'],
-						'item_font'		=> $_POST['item_font']);
+					'size_option'			=> $size_option,
+					'size_width'			=> $size_width,
+					'size_rows'				=> $size_rows,
+					'size_rows_all'			=> $size_rows_all,
+					'header_show_image'		=> $header_show_image,
+					'header_show_username'	=> $header_show_username,
+					'header_show_criteria'	=> $header_show_criteria,
+					'header_bgcolor'		=> $header_bgcolor,
+					'header_fontcolor'		=> $header_fontcolor,
+					'header_fontface'		=> $header_fontface,
+					'list_fontcolor'		=> $list_fontcolor,
+					'list_fontface'			=> $list_fontface,
+					'footer_bgcolor'		=> $footer_bgcolor );
 		//Store options
 		update_option( 'rnkrwp', $options );
 		

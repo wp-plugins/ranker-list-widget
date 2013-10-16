@@ -21,11 +21,8 @@ function rnkrwp_js_utils(){
 	//Bind page to JS object
 	$utilHTML .= "RNKRWP.page = '".$_GET['page']."';";
 	//Bind show_link to JS object
-	$utilHTML .= "RNKRWP.width = '".$rnkrwp_prefs['width']."';";
-	$utilHTML .= "RNKRWP.rows = '".$rnkrwp_prefs['rows']."';";
-	$utilHTML .= "RNKRWP.show_link = '".$rnkrwp_prefs['show_link']."';";
-	$utilHTML .= "RNKRWP.show_user = '".$rnkrwp_prefs['show_user']."';";
-	$utilHTML .= "RNKRWP.title_font = '".$rnkrwp_prefs['title_font']."';";
+	$utilHTML .= "RNKRWP.width = '".$rnkrwp_prefs['size_width']."';";
+	$utilHTML .= "RNKRWP.rows = '".$rnkrwp_prefs['size_rows']."';";
 	$utilHTML .= "</script>\n";
 	
 	//Output HTML

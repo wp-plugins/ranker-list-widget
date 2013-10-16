@@ -40,7 +40,7 @@ function rnkrwp_build_shortcodes(){
 	<br/><br/><br/>
 
 </div>
-<div id="rnrkwp_calc"><span class="font"></span></div>
+
 <?php
 }
 rnkrwp_build_shortcodes();
