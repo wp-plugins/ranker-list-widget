@@ -21,7 +21,6 @@ function rnkrwp_js_utils(){
 	//Bind page to JS object
 	$utilHTML .= "RNKRWP.page = '".$_GET['page']."';";
 	//Bind show_link to JS object
-	$utilHTML .= "RNKRWP.width = '".$rnkrwp_prefs['size_width']."';";
 	$utilHTML .= "RNKRWP.rows = '".$rnkrwp_prefs['size_rows']."';";
 	$utilHTML .= "</script>\n";
 	

@@ -8,16 +8,16 @@ function rnkrwp_build_shortcodes(){
 ?>
 <div id="rnkrWrap">
 
-	<h1><?php esc_html_e( 'Ranker Plugin Shortcodes', 'rnkrwp' ) ?></h1>
+	<h1><?php esc_html_e( 'Ranker Plugin - Create Shortcodes', 'rnkrwp' ) ?></h1>
 	
 	<ul id="rnkrSubMenu">
 		<li>
 			<a href="<?php menu_page_url( 'rnkrwp-options', true ); ?>" target="_self" title="<?php _e( 'Setup defaults for Ranker widgets', 'rnkrwp' ) ?>">
-				<?php esc_html_e( 'Options', 'rnkrwp' ) ?></a>
+				<?php esc_html_e( 'Display Options', 'rnkrwp' ) ?></a>
 		</li>
 		<li class="selected">
 			<a href="<?php menu_page_url( 'rnkrwp-shortcodes', true ); ?>" target="_self" title="<?php _e( 'Use this tool to create shortcodes for your posts', 'rnkrwp' ) ?>">
-				<?php esc_html_e( 'Shortcodes', 'rnkrwp' ) ?></a>
+				<?php esc_html_e( 'Create Shortcodes', 'rnkrwp' ) ?></a>
 		</li>
 	</ul>
 	

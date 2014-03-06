@@ -3,7 +3,7 @@
 Plugin Name: Ranker List Widget
 Plugin URI: http://www.ranker.com/widget
 Description: Add a Ranker list widget to your Posts.
-Version: 2.0.1
+Version: 2.1.0
 Author: Ranker, Inc
 Author URI: http://www.ranker.com
 License: GPL2
@@ -33,7 +33,7 @@ License: GPL2
  */
 
 //Define Constants
-define( 'RNKRWP_VERSION', '2.0.1' );
+define( 'RNKRWP_VERSION', '2.1.0' );
 define( 'RNKRWP_REQUIRED_WP_VERSION', '3.4' );
 
 if(!defined( 'RNKRWP_PLUGIN_BASENAME' )) define( 'RNKRWP_PLUGIN_BASENAME', plugin_basename(__FILE__) );
@@ -52,35 +52,22 @@ function rnkrwp_init(){
 
 	//Create options array
 	$options = array(
-					'size_option'			=> 'medium',
-					'size_width'			=> '450',
-					'size_rows'				=> '20',
-					'size_rows_all'			=> false,
-					'header_show_image'		=> false,
-					'header_show_username'	=> false,
-					'header_show_criteria'	=> false,
-					'header_bgcolor'		=> 'ffffff',
-					'header_fontcolor'		=> '000000',
-					'header_fontface'		=> 'arial',
-					'list_fontcolor'		=> '000000',
-					'list_fontface'			=> 'arial',
-					'footer_bgcolor'		=> '1e3e66' );
+					'size_rows'					=> '20',
+					'size_rows_all'				=> false,
+					'header_show_image'			=> false,
+					'header_show_username'		=> false,
+					'header_show_criteria'		=> false,
+					'header_bgcolor'			=> 'ffffff',
+					'header_fontcolor'			=> '000000',
+					'header_fontface'			=> 'arial',
+					'list_displaythumbnails'	=> true,
+					'list_slidebgcolor'			=> 'ffffff',
+					'list_fontcolor'			=> '000000',
+					'list_fontface'				=> 'arial',
+					'footer_bgcolor'			=> '1e3e66' );
 	
-	$rnkrwp_prefs	= get_option( 'rnkrwp' );
-	//Pseudo preferences
-	$size_option	= $rnkrwp_prefs['size_option'];
-	
-	//Store options if they don't exist or update
-	if( $size_option == null || $size_option == 'undefined' ){
-		add_option( 'rnkrwp', $options );
-		update_option( 'rnkrwp', $options );
-	}
-	else{
-		add_option( 'rnkrwp', $options );
-	}
-
-	//Remove old changelog if exists
-	delete_option( 'rnkrwp_cl' );
+	//Store options if they don't exist
+	add_option( 'rnkrwp', $options );
 	
 }
 

@@ -9,8 +9,6 @@ function rnkrwp_build_options(){
 	//Get preferences
 	$rnkrwp_prefs	= get_option( 'rnkrwp' );
 	//Pseudo preferences
-	$size_option			= $rnkrwp_prefs['size_option'];
-	$size_width				= $rnkrwp_prefs['size_width'];
 	$size_rows				= $rnkrwp_prefs['size_rows'];
 	$size_rows_all			= $rnkrwp_prefs['size_rows_all'];
 	$header_show_image		= $rnkrwp_prefs['header_show_image'];
@@ -19,6 +17,8 @@ function rnkrwp_build_options(){
 	$header_bgcolor			= $rnkrwp_prefs['header_bgcolor'];
 	$header_fontcolor		= $rnkrwp_prefs['header_fontcolor'];
 	$header_fontface		= $rnkrwp_prefs['header_fontface'];
+	$list_displaythumbnails	= $rnkrwp_prefs['list_displaythumbnails'];
+	$list_slidebgcolor		= $rnkrwp_prefs['list_slidebgcolor'];
 	$list_fontcolor			= $rnkrwp_prefs['list_fontcolor'];
 	$list_fontface			= $rnkrwp_prefs['list_fontface'];
 	$footer_bgcolor			= $rnkrwp_prefs['footer_bgcolor'];
@@ -31,39 +31,31 @@ function rnkrwp_build_options(){
 		if( function_exists('wp_nonce_field') ) wp_nonce_field('rnkrwp-options_update'); 
 	?>
 
-	<h1><?php esc_html_e( 'Ranker Plugin Options', 'rnkrwp' ) ?></h1>
+	<h1><?php esc_html_e( 'Ranker Plugin - Display Options', 'rnkrwp' ) ?></h1>
 	
 	<ul id="rnkrSubMenu">
 		<li class="selected">
 			<a href="<?php menu_page_url( 'rnkrwp-options', true ); ?>" target="_self" title="<?php _e( 'Setup defaults for Ranker widgets', 'rnkrwp' ) ?>">
-				<?php esc_html_e( 'Options', 'rnkrwp' ) ?></a>
+				<?php esc_html_e( 'Display Options', 'rnkrwp' ) ?></a>
 		</li>
 		<li>
 			<a href="<?php menu_page_url( 'rnkrwp-shortcodes', true ); ?>" target="_self" title="<?php _e( 'Use this tool to create shortcodes for your posts', 'rnkrwp' ) ?>">
-				<?php esc_html_e( 'Shortcodes', 'rnkrwp' ) ?></a>
+				<?php esc_html_e( 'Create Shortcodes', 'rnkrwp' ) ?></a>
 		</li>
 	</ul>
 	<?php echo $logMessage ?>
 	
 	<p class="clear">
-		<?php esc_html_e( 'These are the default settings for all Ranker widgets used in posts.', 'rnkrwp' ); ?><br/>
+		<?php esc_html_e( 'These are the default display settings for all Ranker widgets used in posts.', 'rnkrwp' ); ?><br/>
 	</p>
 	
 	<h2><?php esc_html_e( 'Size', 'rnkrwp' ); ?></h2>
 	<ul>
-		<li><strong><?php esc_html_e( 'Width', 'rnkrwp' ); ?>:</strong></li>
 		<li>
-			<input type="radio" name="size_option" value="small"<?php if( $size_option == 'small' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Small', 'rnkrwp' ); ?> (300px)
-		</li>
-		<li>
-			<input type="radio" name="size_option" value="medium"<?php if( $size_option == 'medium' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Medium', 'rnkrwp' ); ?> (450px)
-		</li>
-		<li>
-			<input type="radio" name="size_option" value="large"<?php if( $size_option == 'large' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Large', 'rnkrwp' ); ?> (600px)
-		</li>
-		<li>
-			<input type="radio" id="rnkrwp_size-custom" name="size_option" value="custom"<?php if( $size_option == 'custom' ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Custom', 'rnkrwp' ); ?> 
-			<input type="text" id="rnkrwp_size-width" name="size_width" size="5" value="<?php if( $size_option == 'custom' ) echo $size_width; ?>"/> px
+			<strong><?php esc_html_e( 'Width', 'rnkrwp' ); ?>:</strong>
+			<br/>
+			All widgets are now reactive and will adjust to your themes content! We've made this change to allow widgets to work in your mobile themes.<br/>
+			<em class="note">If you'd like to set a maxium width for your widget, simply wrap the shortcode in a container (div, p etc).</em>
 		</li>
 		<li><br/>
 			<strong><?php esc_html_e( 'Height', 'rnkrwp' ); ?>:</strong>  
@@ -106,6 +98,16 @@ function rnkrwp_build_options(){
 	<h2><?php esc_html_e( 'List', 'rnkrwp' ); ?></h2>
 	<ul>
 		<li>
+			<input type="checkbox" name="list_displaythumbnails" value="1"<?php if( $list_displaythumbnails ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Display Thumbnail Gallery', 'rnkrwp' ); ?>
+		</li>
+		<li>
+			<strong><?php esc_html_e( 'Slide Background', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color', 'rnkrwp' ); ?><br/>
+			<span id="rnkrwp_list-slidebgcolor_000000" class="inlineBlock slideBgColor colorSelect pointer<?php if( $list_slidebgcolor == '000000' ) echo ' selected'; ?>" title="Black"></span>
+			<span id="rnkrwp_list-slidebgcolor_f1f1f1" class="inlineBlock slideBgColor colorSelect pointer<?php if( $list_slidebgcolor == 'f1f1f1' ) echo ' selected'; ?>" title="Light Grey"></span>
+			<span id="rnkrwp_list-slidebgcolor_ffffff" class="inlineBlock slideBgColor colorSelect pointer<?php if( $list_slidebgcolor == 'ffffff' ) echo ' selected'; ?>" title="white"></span>
+			<input type="hidden" id="rnkrwp_list-slidebgcolor" name="list_slidebgcolor" value="<?php echo $list_slidebgcolor; ?>"/>
+		</li>
+		<li>
 			<strong><?php esc_html_e( 'Items', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color &amp; font style', 'rnkrwp' ); ?><br/>
 			<span class="picker" id="rnkrwp_list-fontcolor_pick"></span> 
 			<input type="text" id="rnkrwp_list-fontcolor" name="list_fontcolor" value="<?php echo $list_fontcolor; ?>" size="10"/>&nbsp;&nbsp;<select name="list_fontface">
@@ -123,13 +125,13 @@ function rnkrwp_build_options(){
 	<ul>
 		<li>
 			<strong><?php esc_html_e( 'Background', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color', 'rnkrwp' ); ?><br/>
-			<span id="rnkrwp_footColor_b81507" class="colorSelect<?php if( $footer_bgcolor == 'b81507' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_fc6d04" class="colorSelect<?php if( $footer_bgcolor == 'fc6d04' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_186017" class="colorSelect<?php if( $footer_bgcolor == '186017' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_1e3e66" class="colorSelect<?php if( $footer_bgcolor == '1e3e66' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_553083" class="colorSelect<?php if( $footer_bgcolor == '553083' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_5c5b5b" class="colorSelect<?php if( $footer_bgcolor == '5c5b5b' ) echo ' selected'; ?>"></span>
-			<span id="rnkrwp_footColor_000000" class="colorSelect<?php if( $footer_bgcolor == '000000' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_b81507" class="footBgColor colorSelect<?php if( $footer_bgcolor == 'b81507' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_fc6d04" class="footBgColor colorSelect<?php if( $footer_bgcolor == 'fc6d04' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_186017" class="footBgColor colorSelect<?php if( $footer_bgcolor == '186017' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_1e3e66" class="footBgColor colorSelect<?php if( $footer_bgcolor == '1e3e66' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_553083" class="footBgColor colorSelect<?php if( $footer_bgcolor == '553083' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_5c5b5b" class="footBgColor colorSelect<?php if( $footer_bgcolor == '5c5b5b' ) echo ' selected'; ?>"></span>
+			<span id="rnkrwp_footColor_000000" class="footBgColor colorSelect<?php if( $footer_bgcolor == '000000' ) echo ' selected'; ?>"></span>
 			<input type="hidden" id="rnkrwp_footer-bgcolor" name="footer_bgcolor" value="<?php echo $footer_bgcolor; ?>"/>
 		</li>
 	</ul>
@@ -156,8 +158,6 @@ function rnkrwp_update_options(){
 		$current	= get_option( 'rnkrwp' );
 		
 		//Get updates
-		$size_option			= $_POST['size_option'];
-		$size_width				= $_POST['size_width'];
 		$size_rows				= $_POST['size_rows'];
 		$size_rows_all			= $_POST['size_rows_all'];
 		$header_show_image		= $_POST['header_show_image'];
@@ -166,45 +166,30 @@ function rnkrwp_update_options(){
 		$header_bgcolor			= $_POST['header_bgcolor'];
 		$header_fontcolor		= $_POST['header_fontcolor'];
 		$header_fontface		= $_POST['header_fontface'];
+		$list_displaythumbnails	= $_POST['list_displaythumbnails'];
+		$list_slidebgcolor		= $_POST['list_slidebgcolor'];
 		$list_fontcolor			= $_POST['list_fontcolor'];
 		$list_fontface			= $_POST['list_fontface'];
 		$footer_bgcolor			= $_POST['footer_bgcolor'];
-		
-		//Check size value and adjust width
-		switch( $size_option ){
-			
-			case 'small' :
-				$size_width = '300';
-				break;
-				
-			case 'medium' :
-				$size_width = '450';
-				break;
-			
-			case 'large' :
-				$size_width = '600';
-				break;
-
-		}
 		
 		//Check rows
 		if( $size_rows_all ) $size_rows = 999;
 	
 		//Create options array
 		$options = array(
-					'size_option'			=> $size_option,
-					'size_width'			=> $size_width,
-					'size_rows'				=> $size_rows,
-					'size_rows_all'			=> $size_rows_all,
-					'header_show_image'		=> $header_show_image,
-					'header_show_username'	=> $header_show_username,
-					'header_show_criteria'	=> $header_show_criteria,
-					'header_bgcolor'		=> $header_bgcolor,
-					'header_fontcolor'		=> $header_fontcolor,
-					'header_fontface'		=> $header_fontface,
-					'list_fontcolor'		=> $list_fontcolor,
-					'list_fontface'			=> $list_fontface,
-					'footer_bgcolor'		=> $footer_bgcolor );
+					'size_rows'					=> $size_rows,
+					'size_rows_all'				=> $size_rows_all,
+					'header_show_image'			=> $header_show_image,
+					'header_show_username'		=> $header_show_username,
+					'header_show_criteria'		=> $header_show_criteria,
+					'header_bgcolor'			=> $header_bgcolor,
+					'header_fontcolor'			=> $header_fontcolor,
+					'header_fontface'			=> $header_fontface,
+					'list_displaythumbnails'	=> $list_displaythumbnails,
+					'list_slidebgcolor'			=> $list_slidebgcolor,
+					'list_fontcolor'			=> $list_fontcolor,
+					'list_fontface'				=> $list_fontface,
+					'footer_bgcolor'			=> $footer_bgcolor );
 		//Store options
 		update_option( 'rnkrwp', $options );
 		

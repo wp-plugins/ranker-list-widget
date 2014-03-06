@@ -3,8 +3,8 @@ Contributors: paulranker
 Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 2.0.1
+Tested up to: 3.8.1
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,7 +30,7 @@ For more information please see : [Ranker Widget FAQ](http://www.ranker.com/list
 
 == Installation ==
 
-1. Upload the 'rnkr-wp' folder to the '/wp-content/plugins/' directory.
+1. Upload the 'rnkr-wp' folder to the '/wp-content/plugins/' directory (or install via the Plugins Add New menu).
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Set required options though admin menu.
 4. Place generated short codes in your posts.
@@ -38,7 +38,7 @@ For more information please see : [Ranker Widget FAQ](http://www.ranker.com/list
 == Frequently Asked Questions ==
 
 = How do I create a short code for my posts? =
-That's easy! Once the plugin is installed head to the settings page and switch to the 'short codes' tab. Now find the list you want to embed on [Ranker.com](http://Ranker.com/ "List the universe"), copy it's full URL (I.E. http://www.ranker.com/crowdranked-list/my-favorite-cartoons-of-all-time) and paste that into the input on the shortcodes page. We do some magic and then the usable short code for that list will be displayed below.
+That's easy! Once the plugin is installed and activated head to the settings page and switch to the 'short codes' tab. Now find the list you want to embed on [Ranker.com](http://Ranker.com/ "List the universe"), copy it's full URL (I.E. http://www.ranker.com/crowdranked-list/my-favorite-cartoons-of-all-time) and paste that into the input on the shortcodes page. We do some magic and then the usable short code for that list will be displayed below.
 
 = Will my old V1 short codes work with the V2 plugin? =
 Yes they will! Version 2 is fully backwards compatible, all older short codes will continue to work with the new widget.
@@ -65,6 +65,16 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 
 == Changelog ==
+
+= 2.1.0 =
+The Slideshow/Mobile widget update! See below for a full list of features and changes;
+- NEW! Slideshow widgets are now enabled in the plugin. Any list you embed that is defaulted to slideshow view will show in this new format. Older widget shortcodes will need to be updated to enable the new view (we chose this option to best serve your original embed intent).
+- The widget code is now fully reactive and will adjust to your themes width, this allows for proper widget display on mobile platforms. This change will be rolled out to all lists, including your older embeds. To fix a widget at a specific size you should place the shortcode in a container (div, p etc).
+- Related to the above: Widget width options have been removed from the settings panel. A note regarding the change is in its place and will be removed at a later date.
+- Default properties have been updated to support Slideshow widgets.
+- Thumbnail Gallery option added.
+- Slide Background color option added.
+- Adjusted settings section headers for clarity.
 
 = 2.0.1 =
 Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly.
@@ -108,6 +118,9 @@ Initial beta plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.0 =
+The Slideshow widget update! This release updates the plugin to enable our new Slideshow widget product. Widgets will now also properly display on mobile platforms. Recommended for all users!
 
 = 2.0.1 =
 Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly. Low priority patch, but recommended.

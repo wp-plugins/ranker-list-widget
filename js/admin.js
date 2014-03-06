@@ -98,14 +98,14 @@ RNKRWP.shortcode = {
 				//Query to send
 				data		: 'url='+encodeURIComponent( url ),
 				//Define callback
-				success		: function( data ){
+				success		: function( response ){
 					//Catch JSON error
-					if( !data.error ){
+					if( !response.error ){
 						//Build shortcode
-						RNKRWP.shortcode.buildCode( url, data );
+						RNKRWP.shortcode.buildCode( url, response );
 					}
 					else{
-						console.log( data.errorCode+': '+data.errorMessage );
+						console.log( response.errorCode+': '+response.errorMessage );
 					}
 				},
 				//Timeout
@@ -133,14 +133,15 @@ RNKRWP.shortcode = {
 		 * Build Shortcode
 		 * @desc Build Ranker list shortcode from data and output to user.
 		 * @param {string} url URI encoded URL string.
-		 * @param {object} data JSON response object from data call.
+		 * @param {object} response JSON response object from data call.
 		 */
-		buildCode : function( url, data ){
+		buildCode : function( url, response ){
 			
 			//Build code
-			var name		= decodeURIComponent( data.name ),
+			var name		= decodeURIComponent( response.name ),
 				shortcode	= '[rnkrwp ' +
-					'id="' + data.id + '" ' +
+					'id="' + response.id + '" ' +
+					'format="' + ( ( typeof response.listFormatType === 'undefined' || response.listFormatType === '' || response.listFormatType === 'BLOG' ) ? 'grid' : response.listFormatType.toLowerCase() ) + '" ' +
 					'url="' + decodeURIComponent( url ) + '" ' +
 					'name="' + name.replace( /"/g, '' ).replace( /&quot;/g, '' ) + '"' +
 				']';
@@ -175,26 +176,23 @@ jQuery( document ).ready(function(){
 		
 		/* Footer color clicks */
 		jQuery( '.colorSelect' ).click( function( e ){
-			var color = this.id.split( /_/ )[ 2 ];
-			//Update hidden value
-			jQuery( '#rnkrwp_footer-bgcolor' ).val( color );
+			var	item	= jQuery( this ),
+				color	= this.id.split( /_/ )[ 2 ];
 			
-			//Update display chicklet
-			jQuery( '.colorSelect' ).removeClass( 'selected' );
-			jQuery( '#rnkrwp_footColor_' + color ).addClass( 'selected' );
-		} );
-		
-		/* Custom width select */
-		jQuery( '#rnkrWrap' ).on( 'click', 'input[type=radio][name=size_option]', function( e ){
-			if( this.id === 'rnkrwp_size-custom' ){
-				jQuery( '#rnkrwp_size-width' ).focus();
+			if( item.hasClass( 'slideBgColor' ) ){
+				//Update hidden value
+				jQuery( '#rnkrwp_list-slidebgcolor' ).val( color );
+				//Update display chicklet
+				jQuery( '.colorSelect.slideBgColor' ).removeClass( 'selected' );
+				jQuery( '#rnkrwp_list-slidebgcolor_' + color ).addClass( 'selected' );
 			}
 			else{
-				jQuery( '#rnkrwp_size-width' ).val( '' ).blur();
+				//Update hidden value
+				jQuery( '#rnkrwp_footer-bgcolor' ).val( color );
+				//Update display chicklet
+				jQuery( '.colorSelect.footBgColor' ).removeClass( 'selected' );
+				jQuery( '#rnkrwp_footColor_' + color ).addClass( 'selected' );
 			}
-		} );
-		jQuery( '#rnkrwp_size-width' ).click( function( e ){
-			jQuery( '#rnkrwp_size-custom' ).trigger( 'click' );
 		} );
 		
 	}
