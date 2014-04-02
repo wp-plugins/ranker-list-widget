@@ -9,19 +9,20 @@ function rnkrwp_build_options(){
 	//Get preferences
 	$rnkrwp_prefs	= get_option( 'rnkrwp' );
 	//Pseudo preferences
-	$size_rows				= $rnkrwp_prefs['size_rows'];
-	$size_rows_all			= $rnkrwp_prefs['size_rows_all'];
-	$header_show_image		= $rnkrwp_prefs['header_show_image'];
-	$header_show_username	= $rnkrwp_prefs['header_show_username'];
-	$header_show_criteria	= $rnkrwp_prefs['header_show_criteria'];
-	$header_bgcolor			= $rnkrwp_prefs['header_bgcolor'];
-	$header_fontcolor		= $rnkrwp_prefs['header_fontcolor'];
-	$header_fontface		= $rnkrwp_prefs['header_fontface'];
-	$list_displaythumbnails	= $rnkrwp_prefs['list_displaythumbnails'];
-	$list_slidebgcolor		= $rnkrwp_prefs['list_slidebgcolor'];
-	$list_fontcolor			= $rnkrwp_prefs['list_fontcolor'];
-	$list_fontface			= $rnkrwp_prefs['list_fontface'];
-	$footer_bgcolor			= $rnkrwp_prefs['footer_bgcolor'];
+	$size_rows					= $rnkrwp_prefs['size_rows'];
+	$size_rows_all				= $rnkrwp_prefs['size_rows_all'];
+	$header_show_image			= $rnkrwp_prefs['header_show_image'];
+	$header_show_username		= $rnkrwp_prefs['header_show_username'];
+	$header_show_criteria		= $rnkrwp_prefs['header_show_criteria'];
+	$header_bgcolor				= $rnkrwp_prefs['header_bgcolor'];
+	$header_fontcolor			= $rnkrwp_prefs['header_fontcolor'];
+	$header_fontface			= $rnkrwp_prefs['header_fontface'];
+	$list_displaythumbnails		= $rnkrwp_prefs['list_displaythumbnails'];
+	$list_displaydescriptions	= $rnkrwp_prefs['list_displaydescriptions'];
+	$list_slidebgcolor			= $rnkrwp_prefs['list_slidebgcolor'];
+	$list_fontcolor				= $rnkrwp_prefs['list_fontcolor'];
+	$list_fontface				= $rnkrwp_prefs['list_fontface'];
+	$footer_bgcolor				= $rnkrwp_prefs['footer_bgcolor'];
 	
 ?>
 
@@ -49,16 +50,9 @@ function rnkrwp_build_options(){
 		<?php esc_html_e( 'These are the default display settings for all Ranker widgets used in posts.', 'rnkrwp' ); ?><br/>
 	</p>
 	
-	<h2><?php esc_html_e( 'Size', 'rnkrwp' ); ?></h2>
+	<h2><?php esc_html_e( 'Height', 'rnkrwp' ); ?></h2>
 	<ul>
 		<li>
-			<strong><?php esc_html_e( 'Width', 'rnkrwp' ); ?>:</strong>
-			<br/>
-			All widgets are now reactive and will adjust to your themes content! We've made this change to allow widgets to work in your mobile themes.<br/>
-			<em class="note">If you'd like to set a maxium width for your widget, simply wrap the shortcode in a container (div, p etc).</em>
-		</li>
-		<li><br/>
-			<strong><?php esc_html_e( 'Height', 'rnkrwp' ); ?>:</strong>  
 			<input type="text" id="rnkrwp_size-rows" name="size_rows" value="<?php if( $size_rows != 999 ) echo $size_rows ?>"<?php if( $size_rows_all ) echo ' disabled="true"'; ?> size="3"/> 
 			<?php esc_html_e( 'rows', 'rnkrwp' ); ?>&nbsp;&nbsp;
 			<input type="checkbox" id="rnkrwp_size-rowsall" name="size_rows_all" <?php if( $size_rows_all ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'display all rows', 'rnkrwp' ); ?>
@@ -99,6 +93,9 @@ function rnkrwp_build_options(){
 	<ul>
 		<li>
 			<input type="checkbox" name="list_displaythumbnails" value="1"<?php if( $list_displaythumbnails ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Display Thumbnail Gallery', 'rnkrwp' ); ?>
+		</li>
+		<li>
+			<input type="checkbox" name="list_displaydescriptions" value="1"<?php if( $list_displaydescriptions ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Display Item Descriptions', 'rnkrwp' ); ?>
 		</li>
 		<li>
 			<strong><?php esc_html_e( 'Slide Background', 'rnkrwp' ); ?>:</strong> <?php esc_html_e( 'select a color', 'rnkrwp' ); ?><br/>
@@ -158,19 +155,20 @@ function rnkrwp_update_options(){
 		$current	= get_option( 'rnkrwp' );
 		
 		//Get updates
-		$size_rows				= $_POST['size_rows'];
-		$size_rows_all			= $_POST['size_rows_all'];
-		$header_show_image		= $_POST['header_show_image'];
-		$header_show_username	= $_POST['header_show_username'];
-		$header_show_criteria	= $_POST['header_show_criteria'];
-		$header_bgcolor			= $_POST['header_bgcolor'];
-		$header_fontcolor		= $_POST['header_fontcolor'];
-		$header_fontface		= $_POST['header_fontface'];
-		$list_displaythumbnails	= $_POST['list_displaythumbnails'];
-		$list_slidebgcolor		= $_POST['list_slidebgcolor'];
-		$list_fontcolor			= $_POST['list_fontcolor'];
-		$list_fontface			= $_POST['list_fontface'];
-		$footer_bgcolor			= $_POST['footer_bgcolor'];
+		$size_rows					= $_POST['size_rows'];
+		$size_rows_all				= $_POST['size_rows_all'];
+		$header_show_image			= $_POST['header_show_image'];
+		$header_show_username		= $_POST['header_show_username'];
+		$header_show_criteria		= $_POST['header_show_criteria'];
+		$header_bgcolor				= $_POST['header_bgcolor'];
+		$header_fontcolor			= $_POST['header_fontcolor'];
+		$header_fontface			= $_POST['header_fontface'];
+		$list_displaythumbnails		= $_POST['list_displaythumbnails'];
+		$list_displaydescriptions	= $_POST['list_displaydescriptions'];
+		$list_slidebgcolor			= $_POST['list_slidebgcolor'];
+		$list_fontcolor				= $_POST['list_fontcolor'];
+		$list_fontface				= $_POST['list_fontface'];
+		$footer_bgcolor				= $_POST['footer_bgcolor'];
 		
 		//Check rows
 		if( $size_rows_all ) $size_rows = 999;
@@ -186,6 +184,7 @@ function rnkrwp_update_options(){
 					'header_fontcolor'			=> $header_fontcolor,
 					'header_fontface'			=> $header_fontface,
 					'list_displaythumbnails'	=> $list_displaythumbnails,
+					'list_displaydescriptions'	=> $list_displaydescriptions,
 					'list_slidebgcolor'			=> $list_slidebgcolor,
 					'list_fontcolor'			=> $list_fontcolor,
 					'list_fontface'				=> $list_fontface,

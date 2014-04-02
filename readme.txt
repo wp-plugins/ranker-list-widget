@@ -4,7 +4,7 @@ Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 3.8.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 == Changelog ==
 
+= 2.1.1 =
+- Added an option to the Ranker settings panel to allow turning item descriptions off for slideshow widgets.
+- Removed reactive widget messaging.
+
 = 2.1.0 =
 The Slideshow/Mobile widget update! See below for a full list of features and changes;
 - NEW! Slideshow widgets are now enabled in the plugin. Any list you embed that is defaulted to slideshow view will show in this new format. Older widget shortcodes will need to be updated to enable the new view (we chose this option to best serve your original embed intent).
@@ -118,6 +122,9 @@ Initial beta plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Minor update to slideshow widget display options, upgrade for additional slideshow control. Low priority patch, but recommended.
 
 = 2.1.0 =
 The Slideshow widget update! This release updates the plugin to enable our new Slideshow widget product. Widgets will now also properly display on mobile platforms. Recommended for all users!

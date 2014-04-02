@@ -25,6 +25,7 @@ function rnkrwp_place_scripts(){
 		$header_fontcolor		= $rnkrwp_prefs['header_fontcolor'];
 		$header_fontface		= $rnkrwp_prefs['header_fontface'];
 		$list_displaythumbnails	= $rnkrwp_prefs['list_displaythumbnails'];
+		$list_displaydescriptions	= $rnkrwp_prefs['list_displaydescriptions'];
 		$list_slidebgcolor		= $rnkrwp_prefs['list_slidebgcolor'];
 		$list_fontcolor			= $rnkrwp_prefs['list_fontcolor'];
 		$list_fontface			= $rnkrwp_prefs['list_fontface'];
@@ -62,6 +63,12 @@ function rnkrwp_place_scripts(){
 		else{
 			$list_displaythumbnails	= 'false';
 		}
+		if( $list_displaydescriptions ){
+			$list_displaydescriptions	= 'true';
+		}
+		else{
+			$list_displaydescriptions	= 'false';
+		}
 		
 		//Build HTML output
 		$defaultHTML = '<script>var RNKRW = RNKRW || {};';
@@ -76,6 +83,7 @@ function rnkrwp_place_scripts(){
 			$defaultHTML .= '},';
 			$defaultHTML .= 'list	: {';
 				$defaultHTML .= 'displaythumbnails	: '.$list_displaythumbnails.',';
+				$defaultHTML .= 'displaydescriptions	: '.$list_displaydescriptions.',';
 				$defaultHTML .= 'slidebgcolor		: "'.$list_slidebgcolor.'",';
 				$defaultHTML .= 'fontface			: "'.$list_fontface.'",';
 				$defaultHTML .= 'fontcolor			: "'.$list_fontcolor.'"';
