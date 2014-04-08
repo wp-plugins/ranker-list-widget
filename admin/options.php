@@ -11,6 +11,7 @@ function rnkrwp_build_options(){
 	//Pseudo preferences
 	$size_rows					= $rnkrwp_prefs['size_rows'];
 	$size_rows_all				= $rnkrwp_prefs['size_rows_all'];
+	$header_show_name			= $rnkrwp_prefs['header_show_name'];
 	$header_show_image			= $rnkrwp_prefs['header_show_image'];
 	$header_show_username		= $rnkrwp_prefs['header_show_username'];
 	$header_show_criteria		= $rnkrwp_prefs['header_show_criteria'];
@@ -62,6 +63,9 @@ function rnkrwp_build_options(){
 	<h2><?php esc_html_e( 'Header', 'rnkrwp' ); ?></h2>
 	<ul>
 		<li><strong><?php esc_html_e( 'List Details', 'rnkrwp' ); ?>:</strong></li>
+		<li>
+			<input type="checkbox" name="header_show_name" value="1"<?php if( $header_show_name ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Show list name', 'rnkrwp' ); ?>
+		</li>
 		<li>
 			<input type="checkbox" name="header_show_image" value="1"<?php if( $header_show_image ) echo ' checked="true"'; ?>/> <?php esc_html_e( 'Show list image', 'rnkrwp' ); ?>
 		</li>
@@ -157,6 +161,7 @@ function rnkrwp_update_options(){
 		//Get updates
 		$size_rows					= $_POST['size_rows'];
 		$size_rows_all				= $_POST['size_rows_all'];
+		$header_show_name			= $_POST['header_show_name'];
 		$header_show_image			= $_POST['header_show_image'];
 		$header_show_username		= $_POST['header_show_username'];
 		$header_show_criteria		= $_POST['header_show_criteria'];
@@ -177,6 +182,7 @@ function rnkrwp_update_options(){
 		$options = array(
 					'size_rows'					=> $size_rows,
 					'size_rows_all'				=> $size_rows_all,
+					'header_show_name'			=> $header_show_name,
 					'header_show_image'			=> $header_show_image,
 					'header_show_username'		=> $header_show_username,
 					'header_show_criteria'		=> $header_show_criteria,

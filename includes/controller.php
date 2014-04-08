@@ -18,6 +18,7 @@ function rnkrwp_place_scripts(){
 		
 		//Get preferences
 		$rnkrwp_prefs			= get_option( 'rnkrwp' );
+		$header_show_name		= $rnkrwp_prefs['header_show_name'];
 		$header_show_image		= $rnkrwp_prefs['header_show_image'];
 		$header_show_username	= $rnkrwp_prefs['header_show_username'];
 		$header_show_criteria	= $rnkrwp_prefs['header_show_criteria'];
@@ -39,6 +40,12 @@ function rnkrwp_place_scripts(){
 		$footer_bgcolor			= preg_replace('(\#)', '', $footer_bgcolor);
 		
 		//Adjust booleans
+		if( $header_show_name ){
+			$header_show_name		= 'true';
+		}
+		else{
+			$header_show_name		= 'false';
+		}
 		if( $header_show_image ){
 			$header_show_image		= 'true';
 		}
@@ -74,6 +81,7 @@ function rnkrwp_place_scripts(){
 		$defaultHTML = '<script>var RNKRW = RNKRW || {};';
 		$defaultHTML .= 'RNKRW.pref = {';
 			$defaultHTML .= 'header	: {';
+				$defaultHTML .= 'name		: '.$header_show_name.',';
 				$defaultHTML .= 'image		: '.$header_show_image.',';
 				$defaultHTML .= 'username	: '.$header_show_username.',';
 				$defaultHTML .= 'criteria	: '.$header_show_criteria.',';

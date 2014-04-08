@@ -3,14 +3,14 @@
 Plugin Name: Ranker List Widget
 Plugin URI: http://www.ranker.com/widget
 Description: Add a Ranker list widget to your Posts.
-Version: 2.1.1
+Version: 2.2.0
 Author: Ranker, Inc
 Author URI: http://www.ranker.com
 License: GPL2
 */
 
 /*	
-	Copyright 2012  Ranker Inc  (email : feedback@ranker.com)
+	Copyright 2012-2014  Ranker Inc  (email : feedback@ranker.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -33,7 +33,7 @@ License: GPL2
  */
 
 //Define Constants
-define( 'RNKRWP_VERSION', '2.1.1' );
+define( 'RNKRWP_VERSION', '2.2.0' );
 define( 'RNKRWP_REQUIRED_WP_VERSION', '3.4' );
 
 if(!defined( 'RNKRWP_PLUGIN_BASENAME' )) define( 'RNKRWP_PLUGIN_BASENAME', plugin_basename(__FILE__) );
@@ -54,6 +54,7 @@ function rnkrwp_init(){
 	$options = array(
 					'size_rows'					=> '20',
 					'size_rows_all'				=> false,
+					'header_show_name'			=> true,
 					'header_show_image'			=> false,
 					'header_show_username'		=> false,
 					'header_show_criteria'		=> false,
@@ -65,7 +66,7 @@ function rnkrwp_init(){
 					'list_slidebgcolor'			=> 'ffffff',
 					'list_fontcolor'			=> '000000',
 					'list_fontface'				=> 'arial',
-					'footer_bgcolor'			=> '1e3e66' );
+					'footer_bgcolor'			=> '5c5b5b' );
 	
 	//Store options if they don't exist
 	add_option( 'rnkrwp', $options );

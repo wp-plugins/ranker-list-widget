@@ -4,7 +4,7 @@ Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 3.8.1
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,12 +66,18 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 == Changelog ==
 
+= 2.2.0 =
+- Responding to plugin user feedback, we've reworked some code and now widgets can have all of their header items (including list name) turned off.
+- Included in this update are some major widget styling changes: The widget now has a more generic look by default to allow for easier site integration.
+- CSS interference between your existing themes and the widget should be greatly reduced.
+- We've also run a pass on de-cluttering the header and footer: Sharing icons have been moved to the footer and display in a more neutral color. Footer button functionality has been changed to text links.
+
 = 2.1.1 =
 - Added an option to the Ranker settings panel to allow turning item descriptions off for slideshow widgets.
 - Removed reactive widget messaging.
 
 = 2.1.0 =
-The Slideshow/Mobile widget update! See below for a full list of features and changes;
+- The Slideshow/Mobile widget update! See below for a full list of features and changes;
 - NEW! Slideshow widgets are now enabled in the plugin. Any list you embed that is defaulted to slideshow view will show in this new format. Older widget shortcodes will need to be updated to enable the new view (we chose this option to best serve your original embed intent).
 - The widget code is now fully reactive and will adjust to your themes width, this allows for proper widget display on mobile platforms. This change will be rolled out to all lists, including your older embeds. To fix a widget at a specific size you should place the shortcode in a container (div, p etc).
 - Related to the above: Widget width options have been removed from the settings panel. A note regarding the change is in its place and will be removed at a later date.
@@ -81,10 +87,10 @@ The Slideshow/Mobile widget update! See below for a full list of features and ch
 - Adjusted settings section headers for clarity.
 
 = 2.0.1 =
-Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly.
+- Bug fix for list names that have double quotes. Additional double quotes were causing some short codes to display incorrectly.
 
 = 2.0 =
-The version 2 widget has been completely rewritten from the ground up using HTML5. See below for a full list of features and changes;
+- The version 2 widget has been completely rewritten from the ground up using HTML5. See below for a full list of features and changes;
 - Use of iframes has been completely removed.
 - Need for short code recalculation on certain setting changes removed.
 - Removed the need for an internal DB stored changelog and cleared the DB entry for it.
@@ -103,25 +109,28 @@ The version 2 widget has been completely rewritten from the ground up using HTML
 - Added screenshot of a customized widget to plugin folder.
 
 = 1.0 =
-First official release added to directory.
+- First official release added to directory.
 
 = 0.4/RC1.0 =
-Adjusted options screen to give visual feedback when a 'recalculation' setting is changed.
+- Adjusted options screen to give visual feedback when a 'recalculation' setting is changed.
 
 = 0.3 =
-Updated read me with additional FAQ and description details.
-Added screenshots to plugin folder.
+- Updated read me with additional FAQ and description details.
+- Added screenshots to plugin folder.
 
 = 0.2 =
-Fixed issue with shortcode height calculations.
-Adjusted settings CSS for readability.
-Ensured loading of widget is inside content.
+- Fixed issue with shortcode height calculations.
+- Adjusted settings CSS for readability.
+- Ensured loading of widget is inside content.
 
 = 0.1 =
-Initial beta plugin.
+- Initial beta plugin.
 
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+Settings and widget styling updates, recommended for all users.
 
 = 2.1.1 =
 Minor update to slideshow widget display options, upgrade for additional slideshow control. Low priority patch, but recommended.
