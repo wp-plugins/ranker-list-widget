@@ -4,7 +4,7 @@ Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,7 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 == Changelog ==
 
-= 2.2.1 =
+= 2.2.2 =
 - Bug fix for an internal CDN issue where certain widgets were rendering blank.
 
 = 2.2.0 =
@@ -132,7 +132,7 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 == Upgrade Notice ==
 
-= 2.2.1 =
+= 2.2.2 =
 Bug fix for blank widgets, recommended for all users.
 
 = 2.2.0 =

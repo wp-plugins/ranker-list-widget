@@ -107,7 +107,7 @@ function rnkrwp_place_scripts(){
 	}
 	
 	//Only load on non-admin pages
-	if( !is_admin() ) wp_enqueue_script( 'rnkw', '//cdn2.rnkr-static.com/latest/wro/widget_V2.js', '', null, true );
+	if( !is_admin() ) wp_enqueue_script( 'rnkw', '//widget.ranker.com/static/rnkrw2.js', '', null, true );
 	
 }
 
