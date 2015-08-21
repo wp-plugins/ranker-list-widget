@@ -4,14 +4,16 @@ Donate link: http://www.ranker.com/
 Tags: poll, polls, polling, survey, list, lists, rate, ranking, Ranker, vote, voting, community, sidebar
 Requires at least: 3.4
 Tested up to: 4.2
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Ranker to create a custom "ranking poll" -a highly engaging crowdsourced list that will increase time on page by 125% and commenting 3X.
+!!!This Plugin has reached End of Life!!! - Please upgrade to Polling Widget: Ranker Lists to continue receiving updates.
 
 
 == Description ==
+
+!!!This Plugin has reached End of Life!!! - Please upgrade to [Polling Widget: Ranker Lists](https://wordpress.org/plugins/polling-widget-ranker-lists/ "New Plugin") to continue receiving updates.
 
 Use Ranker's free widget to create a fully-customizable "ranking poll" - a list about any topic that your visitors impact by voting items up and down, reranking the list, or adding items. Use it as a "POLL: _____" blog post, to add instant community engagement to an existing "list" blog post as a "reader's version", or stick Ranker lists on your sidebar to increase time on site.
 
@@ -36,6 +38,11 @@ For more information please see : [Ranker Widget FAQ](http://www.ranker.com/list
 4. Place generated short codes in your posts.
 
 == Frequently Asked Questions ==
+
+= Why has this plugin reached End of Life? =
+We have for the past two years been maintaining two plugins, both containing very similar functionality. For ease and speed of updates we have chosen to roll both feature sets together and support only one Ranker plugin. 
+[Polling Widget: Ranker Lists](https://wordpress.org/plugins/polling-widget-ranker-lists/ "New Plugin") will continue to support all the features you use today, but you'll also have access to our latest platform and updates. 
+We recommend you immediatly upgrade to the new plugin. In some cases you will need to reconfigure your options but, all embedded widget codes will continue to work.
 
 = How do I create a short code for my posts? =
 That's easy! Once the plugin is installed and activated head to the settings page and switch to the 'short codes' tab. Now find the list you want to embed on [Ranker.com](http://Ranker.com/ "List the universe"), copy it's full URL (I.E. http://www.ranker.com/crowdranked-list/my-favorite-cartoons-of-all-time) and paste that into the input on the shortcodes page. We do some magic and then the usable short code for that list will be displayed below.
@@ -65,6 +72,11 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 
 == Changelog ==
+
+= 2.2.4 =
+- End of Life messaging and upgrade instructions added to readme.txt
+- End of Life FAQ question added.
+- End of Life messaging added to admin area. 
 
 = 2.2.3 =
 - Bug fix for an internal CDN issue where certain widgets were rendering blank.
@@ -131,6 +143,9 @@ For more information on using Ranker widgets please see the [Widget Info page](h
 
 
 == Upgrade Notice ==
+
+= 2.2.4 =
+This plugin has reached End of Life, please upgrade to ["Polling Widget: Ranker Lists"](https://wordpress.org/plugins/polling-widget-ranker-lists/ "New Plugin") immediatly to continue receiving updates.
 
 = 2.2.3 =
 Bug fix for blank widgets, recommended for all users.

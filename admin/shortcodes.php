@@ -10,6 +10,10 @@ function rnkrwp_build_shortcodes(){
 
 	<h1><?php esc_html_e( 'Ranker Plugin - Create Shortcodes', 'rnkrwp' ) ?></h1>
 	
+	<div class="eolWarning">
+		!!!This Plugin has reached End of Life!!! - Please upgrade to <strong><em>Polling Widget: Ranker Lists</em></strong> to continue receiving updates.
+	</div>
+	
 	<ul id="rnkrSubMenu">
 		<li>
 			<a href="<?php menu_page_url( 'rnkrwp-options', true ); ?>" target="_self" title="<?php _e( 'Setup defaults for Ranker widgets', 'rnkrwp' ) ?>">

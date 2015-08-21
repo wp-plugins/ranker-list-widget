@@ -3,7 +3,7 @@
 Plugin Name: Ranker List Widget
 Plugin URI: http://www.ranker.com/widget
 Description: Add a Ranker list widget to your Posts.
-Version: 2.2.3
+Version: 2.2.4
 Author: Ranker, Inc
 Author URI: http://www.ranker.com
 License: GPL2
@@ -33,7 +33,7 @@ License: GPL2
  */
 
 //Define Constants
-define( 'RNKRWP_VERSION', '2.2.3' );
+define( 'RNKRWP_VERSION', '2.2.4' );
 define( 'RNKRWP_REQUIRED_WP_VERSION', '3.4' );
 
 if(!defined( 'RNKRWP_PLUGIN_BASENAME' )) define( 'RNKRWP_PLUGIN_BASENAME', plugin_basename(__FILE__) );
